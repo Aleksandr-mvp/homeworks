@@ -3,7 +3,7 @@ import Message from "./Message";
 
 const messageData = {
     avatar: 'https://cdn1.ozone.ru/s3/multimedia-y/6045529018.jpg',
-    name: 'Rock star',
+    name: '悠真',
     message: 'Now I will go to the store for dumplings :)',
     time: '22:00',
 }
