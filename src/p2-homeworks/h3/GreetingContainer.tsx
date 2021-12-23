@@ -20,12 +20,14 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({users, addUser
         setName(e.currentTarget.value) // need to fix
     }
     const addUser = () => {
-        if ( name !== '') {
+        if ( name.trim() !== '') {
             setName('')
             addUserCallback(name)
+            setError('')
             alert(`Hello ${name} !`) // need to fix
         } else {
-            setError(error)
+            setError('Введите коректное имя')
+
         }
     }
 
