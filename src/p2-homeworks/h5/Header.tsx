@@ -3,15 +3,11 @@ import s from './pages/UniversalStyles.module.css'
 import { NavLink } from 'react-router-dom'
 import {PATH} from "./Rout";
 
-type ActiveStyleType = {
-    textDecoration: string
-    color: string
-    fontSize: number | string
-}
+
 
 function Header() {
 
-    let activeStyle: ActiveStyleType = {
+    let activeStyle: any = {
         textDecoration: "none",
         color: "orange",
         fontSize: 20 + 'px'
@@ -20,13 +16,16 @@ function Header() {
     return (
         <div className={s.headWrapper}>
             <div className={s.item}>
-                <NavLink to={PATH.PRE_JUNIOR}>PreJunior</NavLink>
+                <NavLink to={PATH.PRE_JUNIOR} style={({isActive}) =>
+                 isActive ? activeStyle : undefined }>PreJunior</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to={PATH.JUNIOR}>Junior</NavLink>
+                <NavLink to={PATH.JUNIOR} style={({isActive}) =>
+                    isActive ? activeStyle : undefined }>Junior</NavLink>
             </div>
             <div className={s.item}>
-                <NavLink to={PATH.JUNIOR_PLUS}>JuniorPlus</NavLink>
+                <NavLink to={PATH.JUNIOR_PLUS} style={({isActive}) =>
+                    isActive ? activeStyle : undefined }>JuniorPlus</NavLink>
             </div>
         </div>
     )
